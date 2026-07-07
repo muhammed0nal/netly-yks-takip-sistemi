@@ -1,0 +1,36 @@
+---
+alwaysApply: true
+---
+# API Dokümantasyonu Güncelleme Kuralı
+
+`docs/API-REFERANSI.md` ve `docs/postman/netly-api.postman_collection.json`, backend API'sinin resmi referans kaynaklarıdır.
+
+Bir görev backend uç noktalarını (endpoint) değiştirdiğinde aynı görev içinde şu dosyaları güncelle:
+
+## API-REFERANSI.md
+
+Şunlardan biri değiştiyse `docs/API-REFERANSI.md`'yi güncelle:
+
+- **Yeni endpoint eklendi veya kaldırıldı** → özet tabloya ekle/çıkar, tam bölüm yaz veya kaldır
+- **İstek/yanıt gövdesi değişti** → ilgili endpoint bölümündeki JSON örneklerini ve alan tablolarını güncelle
+- **HTTP durum kodları veya hata mesajları değişti** → hata kodları tablosunu güncelle
+- **Kimlik doğrulama veya JWT ayarları değişti** → JWT bölümünü güncelle
+- **Base URL veya genel hata formatı değişti** → Temel Bilgiler ve Hata Yanıt Formatı bölümlerini güncelle
+
+Her endpoint bölümünde şunlar bulunmalı: açıklama, istek/yanıt örnekleri, hata kodları, Postman tablosu (method, URL, headers, body), cURL örneği.
+
+## Postman Koleksiyonu
+
+Şunlardan biri değiştiyse `docs/postman/netly-api.postman_collection.json`'ı güncelle:
+
+- **Yeni endpoint eklendi** → koleksiyona yeni istek ekle; token dönen uç noktalarda test script'i ile `token` değişkenini kaydet
+- **Endpoint yolu, metodu veya gövdesi değişti** → ilgili isteği güncelle
+- **Koleksiyon değişkenleri değişti** → `baseUrl`, `token` vb. değişkenleri güncelle
+- **Test script'leri veya beklenen yanıt yapısı değişti** → test script'lerini güncelle
+
+Postman koleksiyonu v2.1 formatında kalmalı; `baseUrl` ve `token` koleksiyon değişkenleri korunmalı.
+
+## Diğer dosyalarla ilişki
+
+- README veya BACKEND-REHBERI'de endpoint listesi değiştiyse, API-REFERANSI ile tutarlı olmalı.
+- Küçük iç uygulama değişiklikleri (refactor, isim değişikliği) dış API sözleşmesini etkilemiyorsa dokümantasyon güncellemesi gerekmez.

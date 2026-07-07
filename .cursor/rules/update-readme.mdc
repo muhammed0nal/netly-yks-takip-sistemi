@@ -1,0 +1,25 @@
+---
+alwaysApply: true
+---
+# README Güncelleme Kuralı
+
+Kök dizindeki `README.md`, projenin tek doğruluk kaynağıdır (uygulama mantığı, teknoloji yığını, proje yapısı, kurulum, yol haritası).
+
+Bir görevi tamamlarken şunlardan biri değiştiyse `README.md`'yi aynı görev içinde güncelle:
+
+- **Yeni özellik eklendi veya tamamlandı** → "Yol Haritası / Durum" bölümünde ilgili maddeyi işaretle, yoksa yeni madde ekle. Gerekirse "Uygulamanın Temel Mantığı" tablosunu güncelle.
+- **Teknoloji/bağımlılık değişti** (örn. backend kuruldu, Prisma eklendi) → "Teknoloji Yığını" ve "Kurulum ve Çalıştırma" bölümlerini güncelle.
+- **Klasör yapısı değişti** → "Proje Yapısı" ağacını güncelle.
+
+## "Yapılanlar" Bölümü
+
+README'deki "Yapılanlar" bölümü, tamamlanan işlerin kayıt defteridir ve şu alt başlıklara ayrılır: **Genel**, **Frontend**, **Backend**. Gerekirse yeni alt başlık (örn. "Veritabanı") eklenebilir.
+
+Her görev tamamlandığında:
+
+1. Yapılan işi ilgili alt başlığın (backend işi → "Backend", frontend işi → "Frontend", her ikisini de ilgilendiren/altyapı işi → "Genel") altına **tek satırlık, geçmiş zamanlı** bir madde olarak ekle.
+   - Örnek: `- Express + TypeScript kuruldu, /health endpoint'i eklendi`
+2. Aynı işin tekrarını ekleme; mevcut bir madde kapsıyorsa gerekirse o maddeyi genişlet.
+3. "Henüz kurulum yapılmadı" gibi yer tutucu maddeleri, o alana ilk gerçek iş eklendiğinde kaldır.
+
+Küçük düzeltmeler (bug fix, refactor, stil değişikliği) için README güncellemesi gerekmez.

@@ -1,31 +1,25 @@
-import { StyleSheet } from 'react-native';
+import EmptyState from '@/components/ui/EmptyState';
+import InfoCard from '@/components/ui/InfoCard';
+import ScreenContainer from '@/components/ui/ScreenContainer';
+import ScreenHeader from '@/components/ui/ScreenHeader';
+import { useAuth } from '@/context/AuthContext';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+export default function HomeScreen() {
+  const { user } = useAuth();
+  const firstName = user?.name.split(' ')[0] ?? 'YKS Adayı';
 
-export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    <ScreenContainer scroll withGradient={false}>
+      <ScreenHeader
+        greeting={`Merhaba, ${firstName} 👋`}
+        subtitle="Bugün harika bir gün!"
+      />
+      <InfoCard title="Henüz veri yok">
+        <EmptyState
+          title="Çalışma verilerin burada görünecek"
+          description="Deneme sonuçlarını ve çalışma sürelerini ekledikçe grafikler ve istatistikler burada listelenecek."
+        />
+      </InfoCard>
+    </ScreenContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});

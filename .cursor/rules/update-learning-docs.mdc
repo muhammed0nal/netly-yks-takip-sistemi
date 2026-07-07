@@ -1,0 +1,27 @@
+---
+alwaysApply: true
+---
+# Öğrenme Dokümantasyonu Kuralı
+
+Kök dizindeki `docs/BACKEND-REHBERI.md`, backend tarafını **bilmeyen birine anlatır gibi** açıklayan öğrenme rehberidir. README teknik özet ve kurulum kaydıdır; bu dosya kavramları ve akışı öğretir.
+
+Bir görevi tamamlarken backend ile ilgili şunlardan biri olduysa `docs/BACKEND-REHBERI.md`'yi aynı görev içinde güncelle:
+
+- **Yeni teknoloji veya bağımlılık eklendi** (örn. JWT, Redis) → ilgili teknoloji bölümüne sade bir açıklama ekle
+- **Klasör yapısı veya mimari değişti** (örn. yeni katman, modül yapısı) → "Dosya yapısı" ve akış diyagramlarını güncelle
+- **Yeni kavramsal özellik tamamlandı** (örn. auth, veritabanı şeması, yeni endpoint grubu) → ilgili bölüm ekle veya "Şu an ne var, ne yok" listesini güncelle
+- **Önemli akış değişti** (örn. istek pipeline'ına middleware eklendi) → adım adım akış açıklamasını güncelle
+
+## Yazım tarzı
+
+1. Hedef kitle backend/API konusunda yeni olan biridir; jargon kullanıyorsan hemen altında ne demek olduğunu yaz.
+2. "Ne yaptık" kadar "neden yaptık" de açıklansın.
+3. Kod örnekleri kısa ve projedeki gerçek dosya yollarına referans versin.
+4. Dosyanın sonundaki *Son güncelleme* satırını, anlamlı bir değişiklik yapıldığında güncelle.
+
+## README ile ilişki
+
+- README'de klasör yapısı veya backend kurulum adımları değiştiyse, rehberdeki ilgili bölümler de tutarlı olmalı.
+- README'ye kısa bir "Öğrenme rehberi: `docs/BACKEND-REHBERI.md`" referansı korunmalı (varsa tekrar ekleme).
+
+Küçük düzeltmeler (typo, refactor, stil) için rehber güncellemesi gerekmez.
